@@ -111,8 +111,8 @@
           }
 
           if (check == 0){
-            var text = "This is "+name+",";
-            var text2 = "and I'm repping the "+ward;
+            var text = "This is";
+            var text2 = "and I'm repping the";
             var text3 = "#NewarkGives Me "+nc350+"!";
           } else {
             var text = '';
@@ -135,8 +135,8 @@
             ctx.shadowOffsetY = 2;
             ctx.shadowBlur = 1;
             ctx.fillText(text, canvas.width/2, canvas.height/8);
-             ctx.beginPath();
-            ctx.font = "24px 'Rock Salt'";
+            ctx.beginPath();
+            ctx.font = "20px 'Rock Salt'";
             ctx.fillStyle = "white";
             ctx.textAlign = "center";
             ctx.shadowColor = "black";
@@ -154,7 +154,16 @@
             ctx.shadowBlur = 1;
             ctx.fillText(text2, canvas.width/2, canvas.height/8+60);
             ctx.beginPath();
-            ctx.font = "bold 32px 'Rock Salt'";
+            ctx.font = "20px 'Rock Salt'";
+            ctx.fillStyle = "white";
+            ctx.textAlign = "center";
+            ctx.shadowColor = "black";
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+            ctx.shadowBlur = 1;
+            ctx.fillText(ward, canvas.width/2, canvas.height/8+90);
+            ctx.beginPath();
+            ctx.font = "bold 28px 'Rock Salt'";
             ctx.fillStyle = "white";
             ctx.textAlign = "center";
             ctx.shadowColor = "black";
