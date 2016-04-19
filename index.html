@@ -47,6 +47,7 @@
                   <option>East Ward</option>
                   <option>West Ward</option>
                   <option>Central Ward</option>
+                  <option>City of Newark</option>
                 </select>
               </form>
             </p>
@@ -111,8 +112,8 @@
           }
 
           if (check == 0){
-            var text = "This is";
-            var text2 = "and I'm repping the";
+            var text = "THIS IS";
+            var text2 = "I'M REPPING THE";
             var text3 = "#NewarkGives Me "+nc350+"!";
           } else {
             var text = '';
@@ -124,10 +125,10 @@
             canvas.height = 500;
             ctx.drawImage(img,0,0, canvas.width * 1, canvas.height * 1);
             ctx.beginPath();
-            ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+            ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             ctx.beginPath();
-            ctx.font = "20px Arial";
+            ctx.font = "Bold 20px Arial";
             ctx.fillStyle = "white";
             ctx.textAlign = "center";
             ctx.shadowColor = "black";
@@ -136,35 +137,35 @@
             ctx.shadowBlur = 1;
             ctx.fillText(text, canvas.width/2, canvas.height/8);
             ctx.beginPath();
-            ctx.font = "20px 'Rock Salt'";
+            ctx.font = "28px 'Rock Salt'";
             ctx.fillStyle = "white";
             ctx.textAlign = "center";
             ctx.shadowColor = "black";
             ctx.shadowOffsetX = 2;
             ctx.shadowOffsetY = 2;
             ctx.shadowBlur = 1;
-            ctx.fillText(name, canvas.width/2, canvas.height/8+30);
+            ctx.fillText(name, canvas.width/2, canvas.height/8+40);
             ctx.beginPath();
-            ctx.font = "20px Arial";
+            ctx.font = "Bold 20px Arial";
             ctx.fillStyle = "white";
             ctx.textAlign = "center";
             ctx.shadowColor = "black";
             ctx.shadowOffsetX = 2;
             ctx.shadowOffsetY = 2;
             ctx.shadowBlur = 1;
-            ctx.fillText(text2, canvas.width/2, canvas.height/8+60);
+            ctx.fillText(text2, canvas.width/2, canvas.height/8+73);
             ctx.beginPath();
-            ctx.font = "20px 'Rock Salt'";
+            ctx.font = "28px 'Rock Salt'";
             ctx.fillStyle = "white";
             ctx.textAlign = "center";
             ctx.shadowColor = "black";
             ctx.shadowOffsetX = 2;
             ctx.shadowOffsetY = 2;
             ctx.shadowBlur = 1;
-            ctx.fillText(ward, canvas.width/2, canvas.height/8+90);
+            ctx.fillText(ward, canvas.width/2, canvas.height/8+110);
             ctx.beginPath();
             ctx.font = "bold 28px 'Rock Salt'";
-            ctx.fillStyle = "white";
+            ctx.fillStyle = "e84a36";
             ctx.textAlign = "center";
             ctx.shadowColor = "black";
             ctx.shadowOffsetX = 2;
