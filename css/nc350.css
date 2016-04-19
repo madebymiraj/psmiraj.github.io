@@ -10,6 +10,8 @@ h1{
 	color: #e84a36;
 	text-align: center;
 	font-family: 'Rock Salt', cursive;
+	font-size: 30px;
+	margin-bottom: 15px;
 }
 .container{
 	max-width: 720px;
