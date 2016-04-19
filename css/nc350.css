@@ -1,6 +1,7 @@
 body {
 	background: #FFFFFF url('https://5f81071f79ff7c87d96f-d6cf056aacb281ad4f75193eb300b28a.ssl.cf1.rackcdn.com/Mastheads/client_id_230_masthead_image_1457838581.6307.jpg') top center;
 	background-size: contain;
+	background-attachment: fixed;
 }
 h1{
 	font-weight: bold;
