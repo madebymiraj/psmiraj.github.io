@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Rock+Salt);
+
 body {
 	background: #FFFFFF url('https://5f81071f79ff7c87d96f-d6cf056aacb281ad4f75193eb300b28a.ssl.cf1.rackcdn.com/Mastheads/client_id_230_masthead_image_1457838581.6307.jpg') top center;
 	background-size: contain;
@@ -7,6 +9,7 @@ h1{
 	font-weight: bold;
 	color: #e84a36;
 	text-align: center;
+	font-family: 'Rock Salt', cursive;
 }
 .container{
 	max-width: 720px;
