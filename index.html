@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>#NewarkGives</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/nc350.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <header>
+      <div class="container">
+        <a href="#"><img src="logo.png" /></a>
+      </div>
+    </header>
+    
+    <section class="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            
+            <h1>Join the #NewarkGives Movement!</h1>
+
+            <h2>Step One</h2>
+            <p><strong>Optional:</strong> Personalize your message.</p>
+
+            <p class="fill">
+              <form class="form-inline">
+                This is <div class="form-group"><input class="form-control" type="text" class="form-control" placeholder="Enter your name" id="name" name="name"/></div> and I'm repping the
+                <select class="form-control" id="ward" name="ward">
+                  <option value="">Select a Ward</option>
+                  <option>North</option>
+                  <option>South</option>
+                  <option>East</option>
+                  <option>West</option>
+                  <option>Central</option>
+                </select> Ward
+              </form>
+            </p>
+
+            <p class="fill">
+              <form class="form-inline">
+                #NewarkGives Me <div class="form-group hope"><input class="form-control hope" type="text" placeholder="I.E. Hope, Inspiration, Gratitude, Education..." id="newarkgives" name="NewarkGives"/></div>
+              </form>
+            </p>
+
+            <h2>Step Two</h2>
+            <label>Upload Image:</label><br/>
+
+            <input type="file" id="imageLoader" name="imageLoader"/><br><br>
+            <img id="overlay" width="220" height="277" src="overlay.png" style="display: none;">
+            <h2>Step Three</h2>
+            <p><strong>Right-Click to Download Image &amp; Share on Social Media!</strong></p>
+
+            <canvas id="imageCanvas"></canvas>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer><div class="container"></div></footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      var imageLoader = document.getElementById('imageLoader');
+      imageLoader.addEventListener('change', handleImage, false);
+      var canvas = document.getElementById('imageCanvas');
+      var ctx = canvas.getContext('2d');
+
+      var button = document.getElementById('btn-download');
+      button.addEventListener('click', function (e) {
+          var dataURL = canvas.toDataURL('image/png');
+          button.href = dataURL;
+      });
+
+      function handleImage(e){
+        var reader = new FileReader();
+        reader.onload = function(event){
+          var img = new Image();
+          var check = 0;
+          var img2 = document.getElementById("overlay");
+          var name = document.getElementById('name').value;
+          var ward = document.getElementById('ward').value;
+          var nc350 = document.getElementById('newarkgives').value;
+          if (name) {
+            check = 0;
+            if (ward) {
+              check = 0;
+              if (nc350){
+                check = 0;
+              }
+            }
+          } else{
+            check = 1;
+          }
+
+          if (check == 0){
+            var text = "This is "+name+",";
+            var text2 = "and I'm repping the "+ward+" Ward";
+            var text3 = "#NewarkGives Me "+nc350+"!";
+          } else {
+            var text = '';
+            var text2 = '';
+            var text3 = '';
+          }
+          img.onload = function(){
+            canvas.width = 500;
+            canvas.height = 500;
+            ctx.drawImage(img,0,0, canvas.width * 1, canvas.height * 1);
+            ctx.beginPath();
+            ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.font = "20px Arial";
+            ctx.fillStyle = "white";
+            ctx.textAlign = "center";
+            ctx.shadowColor = "black";
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+            ctx.shadowBlur = 1;
+            ctx.fillText(text, canvas.width/2, canvas.height/8);
+            ctx.fillText(text2, canvas.width/2, canvas.height/8+20);
+            ctx.beginPath();
+            ctx.font = "bold 32px Arial";
+            ctx.fillStyle = "white";
+            ctx.textAlign = "center";
+            ctx.shadowColor = "black";
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+            ctx.shadowBlur = 1;
+            ctx.fillText(text3, canvas.width/2, 35);
+            ctx.beginPath();
+            ctx.drawImage(img2, 0, 0);
+          }
+          img.src = event.target.result;
+        }
+        reader.readAsDataURL(e.target.files[0]);
+      }
+    </script>
+  </body>
+</html>
